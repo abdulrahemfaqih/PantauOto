@@ -22,8 +22,9 @@ import { ScreenShowcaseSection } from '@/components/ScreenShowcaseSection';
 export default function LandingPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
-  // Link file APK di folder public/downloads/pantauoto.apk
-  const apkDownloadUrl = '/downloads/pantauoto.apk';
+  // Link file APK resmi di GitHub Releases
+  const apkDownloadUrl =
+    'https://github.com/abdulrahemfaqih/PantauOto/releases/download/v1.0.0/PantauOto.apk';
 
   const toggleFaq = (index: number) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
@@ -253,7 +254,7 @@ export default function LandingPage() {
               {/* Right QR Code Box */}
               <div className="lg:col-span-4 flex flex-col items-center justify-center p-6 bg-white rounded-lg text-black border border-neutral-200 text-center">
                 <QRCodeSVG
-                  value="https://pantauoto.atnime.serv00.net/downloads/pantauoto.apk"
+                  value={apkDownloadUrl}
                   size={148}
                   level="M"
                   includeMargin={false}
